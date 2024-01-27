@@ -1,15 +1,23 @@
+import { useState } from "react";
+
 function App() {
-  let cnt=15;
+  const [count,setCount]=useState(15);
+
   const addValue=()=>{
-    console.log("clicked!!",cnt++);
+    setCount(count+1);
+    console.log("clicked!!",count);
+  }
+  const decValue= ()=>{
+    setCount(count-1);
+    console.log("cliclked",count);
   }
     return(
       <> 
       <h3>Hello world!!</h3>
-      <h2>Counter Value : {cnt}</h2>
-      <button onClick={addValue}>+</button>
+      <h2>Counter Value : {count}</h2>
+      <button onClick={addValue}>+{count}</button>
       <br/>
-      <button>-</button>
+      <button>-{count}</button>
       </>
     )
 }

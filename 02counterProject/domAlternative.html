@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+
+  <h3>Hello world!!</h3>
+  <h2 id="counterValue">Counter Value: 15</h2>
+  <button onclick="addValue()">+<span>15</span></button>
+  <br/>
+  <button onclick="decValue()">-<span>15</span></button>
+
+  <script>
+    // Using pure JavaScript for DOM manipulation
+
+    // Initial count value
+    let count = 15;
+
+    // Function to update and display the counter value
+    function updateCounter() {
+      document.getElementById('counterValue').textContent = 'Counter Value: ' + count;
+      let spanList=document.querySelectorAll('span');
+      console.log(spanList.length)
+    for(let i=0;i<spanList.length;i++){
+        let ele=spanList[i];
+        ele.innerHTML=count
+    }
+    //   ele.innerHTML=count;
+    }
+
+    // Function to handle addition
+    function addValue() {
+      count += 1;
+      updateCounter();
+      console.log("Clicked! New count:", count);
+    }
+
+    // Function to handle subtraction
+    function decValue() {
+      count -= 1;
+      updateCounter();
+      console.log("Clicked! New count:", count);
+    }
+  </script>
+</body>
+</html>
