@@ -1,0 +1,40 @@
+when we write react code babel converts jsx to pure js in real time right?
+
+Yes, that's correct. When you write React code using JSX (JavaScript XML), the JSX syntax needs to be converted into regular JavaScript code that browsers can understand. This process is called transpilation, and Babel is a popular tool used for this purpose in the React ecosystem.
+
+Babel takes your JSX code and transforms it into equivalent JavaScript code. JSX is a syntactic sugar for React.createElement calls, and Babel handles the conversion. The transformed code is what ultimately gets executed by the browser.
+
+Here's a simple example to illustrate this transformation:
+
+JSX code:
+const element = <h1>Hello, React!</h1>;
+
+Equivalent JavaScript code after Babel transpilation:
+const element = React.createElement('h1', null, 'Hello, React!');
+
+In this example, Babel transforms the JSX <h1>Hello, React!</h1> into the React.createElement function call, creating a virtual DOM representation of the element.
+
+It's important to note that this transformation occurs during the build process, not in real-time in the browser. Developers typically set up a build system, often using tools like Webpack, that includes Babel as a plugin. This build system processes your source code, including the JSX, and produces the final JavaScript bundle that can be served to browsers for execution.
+
+
+
+
+Q) let ReactElement=(<a href="https://google.com">This will take you to google</a>) convert this into js using React.createElement
+
+Ans:-
+To convert the JSX expression into the equivalent JavaScript code using React.createElement, you can do the following:
+
+javascript
+Copy code
+const ReactElement = React.createElement('a', { href: 'https://google.com' }, 'This will take you to google');
+In this code:
+
+The first argument is the type of the element, which is 'a' for an anchor (<a>).
+
+The second argument is an object representing the element's props. In this case, it contains the href attribute.
+
+The third argument is the content of the element, which is the text node in this case.
+
+This React.createElement call creates a virtual representation of the JSX expression <a href="https://google.com">This will take you to google</a>. 
+
+Keep in mind that this is how JSX is transformed behind the scenes when Babel transpiles your React code.
