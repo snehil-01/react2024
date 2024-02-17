@@ -29,7 +29,6 @@ function App() {
 
   useEffect(() => {
     generatePassword();
-    console.log("sux");
   }, [generatePassword]); // if we dont use useCallback it will result in infinte loop as the function changes on every render
 
   return (
